@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="/">
+
+    <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="Ajith - Portfolio">
+
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="portfolio_ajith">
+    <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png"/>
+
+    <title>Ajith Ramsaran</title>
+    <link rel="manifest" href="manifest.json">
+
+    <script>
+        // The value below is injected by flutter build, do not touch.
+        const serviceWorkerVersion = "2027760836";
+    </script>
+    <!-- This script adds the flutter initialization JS code -->
+    <script src="flutter.js" defer></script>
+
+    <style>
+        /* Fullscreen Loader */
+        #loading-indicator {
+          position: fixed;
+          width: 100%;
+          height: 100%;
+          background: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          font-family: Arial, sans-serif;
+          font-size: 18px;
+          font-weight: bold;
+        }
+
+        /* Spinner Animation */
+        .spinner {
+          width: 50px;
+          height: 50px;
+          border: 5px solid lightgray;
+          border-top: 5px solid blue;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+          margin-top: 10px;
+        }
+
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Loader -->
+
+<!--show loader and Flutter Initializing in a row-->
+
+
+<div id="loading-indicator">
+    Flutter Initializing...
+    <div class="spinner"></div>
+</div>
+
+
+<script>
+    // Remove loader when Flutter renders the first frame
+    window.addEventListener('flutter-first-frame', function () {
+      document.getElementById('loading-indicator').style.display = 'none';
+    });
+
+    window.addEventListener('load', function(ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+</script>
+
+</body>
+</html>
+
+
+<!--
+
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Ajith - Portfolio">
+
+  &lt;!&ndash; iOS meta tags & icons &ndash;&gt;
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="portfolio_ajith">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  &lt;!&ndash; Favicon &ndash;&gt;
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>Ajith Ramsaran</title>
+  <link rel="manifest" href="manifest.json">
+
+  <script>
+    // The value below is injected by flutter build, do not touch.
+    const serviceWorkerVersion = null;
+  </script>
+  &lt;!&ndash; This script adds the flutter initialization JS code &ndash;&gt;
+  <script src="flutter.js" defer></script>
+</head>
+<body>
+  <script>
+    window.addEventListener('load', function(ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
+-->
